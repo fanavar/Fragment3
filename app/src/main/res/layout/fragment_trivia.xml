@@ -20,9 +20,9 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="263dp"
-        android:layout_height="171dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="267dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -53,13 +53,14 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewHola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Veamos si adivinas"
+        android:text="Hola"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="12dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -69,6 +70,16 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewHola" />
+
+    <Button
+        android:id="@+id/buttonEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
