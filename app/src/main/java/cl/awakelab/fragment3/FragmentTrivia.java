@@ -76,8 +76,13 @@ public class FragmentTrivia extends Fragment {
         binding.buttonEnviar.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             boolean result = false;
+            if(binding.radioGroup.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getContext(), "selecciona una opción", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if(binding.radioGroup.getCheckedRadioButtonId() == binding.radioButton.getId()) {
                 result = true;
+                
             }
             bundle.putBoolean("respuesta", result);
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_fragmentTrivia3_to_fragmentRespuesta, bundle);

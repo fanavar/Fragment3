@@ -61,7 +61,7 @@ public class FragmentRespuesta extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
             resultCorrect = getArguments().getBoolean("respuesta");
-            Toast.makeText( getContext(),"respuesta " + resultCorrect, Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -71,7 +71,14 @@ public class FragmentRespuesta extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentRespuestaBinding.inflate(getLayoutInflater(),
                 container, false);
-        binding.textViewRespuesta.setText("respuesta "+ resultCorrect);
+        if (resultCorrect == false){
+            String resultCorrect = "incorrecta";
+            binding.textViewRespuesta.setText( "respuesta " + resultCorrect);
+        }else {
+            String resultCorrect = "correcta";
+            binding.textViewRespuesta.setText( "respuesta " + resultCorrect);
+        }
+
 
         binding.buttonBack.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
