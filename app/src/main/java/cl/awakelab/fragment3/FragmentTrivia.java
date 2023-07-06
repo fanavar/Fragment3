@@ -3,6 +3,7 @@ package cl.awakelab.fragment3;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -73,14 +74,15 @@ public class FragmentTrivia extends Fragment {
 
 
         binding.buttonEnviar.setOnClickListener(v -> {
-            if(binding.radioGroup.getCheckedRadioButtonId() == binding.radioButton.getId()){
-                Toast.makeText(getContext(), "respuesta correcta", Toast.LENGTH_LONG).show();
-
-            }else {
-                Toast.makeText(getContext(), "incorrecta", Toast.LENGTH_LONG).show();
+            Bundle bundle = new Bundle();
+            boolean result = false;
+            if(binding.radioGroup.getCheckedRadioButtonId() == binding.radioButton.getId()) {
+                result = true;
             }
-                });
+            bundle.putBoolean("respuesta", result);
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_fragmentTrivia3_to_fragmentRespuesta, bundle);
 
-        return binding.getRoot();
+        });
+            return binding.getRoot();
     }
 }
